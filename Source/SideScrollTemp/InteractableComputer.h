@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "Components/WidgetComponent.h"
 #include "EveeInteractInterface.h"
+#include "Components/RectLightComponent.h"
 #include "InteractableComputer.generated.h"
 
 UCLASS()
@@ -24,6 +25,9 @@ protected:
 private:
 
 	bool ComputerPowerOn;
+
+	UPROPERTY(EditAnywhere)
+	URectLightComponent* CPLightPro;
 
 	UPROPERTY(EditAnywhere)
 	UStaticMeshComponent* ComputerMesh;

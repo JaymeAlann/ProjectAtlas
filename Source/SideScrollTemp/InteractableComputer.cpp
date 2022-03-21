@@ -13,6 +13,16 @@ AInteractableComputer::AInteractableComputer()
 	ComputerMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CoomputerMesh"));
 	ComputerMesh->SetupAttachment(RootComponent);
 
+	CPLightPro = CreateDefaultSubobject< URectLightComponent>(TEXT("ComputerReflectionLight"));
+	CPLightPro->SetupAttachment(RootComponent);
+	CPLightPro->SetSourceWidth(59.0f);
+	CPLightPro->SetSourceHeight(34.44f);
+	CPLightPro->SetAttenuationRadius(140.0f);
+	CPLightPro->SetIntensity(1000.0f);
+	CPLightPro->SetBarnDoorAngle(40.0f);
+	CPLightPro->SetBarnDoorLength(20.0f);
+	CPLightPro->SetLightColor(FLinearColor(0.171441,0.42869,0.361307,1));
+
 	InteractWidget = CreateDefaultSubobject<UWidgetComponent>(TEXT("InteractionWidget"));
 	InteractWidget->SetupAttachment(RootComponent);
 	InteractWidget->SetVisibility(false);
@@ -43,10 +53,12 @@ void AInteractableComputer::Interaction()
 	if (ComputerPowerOn)
 	{
 		ComputerMesh->SetMaterial(0, ComputerOffMat);
+		CPLightPro->SetLightColor(FLinearColor(1, 0.22216, 0.321932, 1));
 		ComputerPowerOn = false;
 	}
 	else {
 		ComputerMesh->SetMaterial(0, ComputerOnMat);
+		CPLightPro->SetLightColor(FLinearColor(0.171441, 0.42869, 0.361307, 1));
 		ComputerPowerOn = true;
 	}
 	UE_LOG(LogTemp, Warning, TEXT("Computer Interacted"));
