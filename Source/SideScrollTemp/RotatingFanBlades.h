@@ -18,6 +18,10 @@ public:
 	UPROPERTY(EditAnywhere)
 	UStaticMeshComponent* Blades;
 
+	UFUNCTION()
+		void setRotateSpeed(float RotationSpeed);
+
+
 protected:
 	UPROPERTY(EditAnywhere)
 	float RotateSpeed = 1.5f;

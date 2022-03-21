@@ -7,6 +7,7 @@
 #include "Components/WidgetComponent.h"
 #include "EveeInteractInterface.h"
 #include "Components/RectLightComponent.h"
+#include "RotatingFanBlades.h"
 #include "InteractableComputer.generated.h"
 
 UCLASS()
@@ -25,6 +26,10 @@ protected:
 private:
 
 	bool ComputerPowerOn;
+	ARotatingFanBlades* fans;
+
+	UPROPERTY(EditDefaultsOnly)
+	AActor* fanController;
 
 	UPROPERTY(EditAnywhere)
 	URectLightComponent* CPLightPro;

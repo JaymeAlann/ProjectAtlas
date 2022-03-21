@@ -18,6 +18,11 @@ ARotatingFanBlades::ARotatingFanBlades()
 
 }
 
+void ARotatingFanBlades::setRotateSpeed(float RotationSpeed)
+{
+	RotateSpeed = RotationSpeed;
+}
+
 // Called when the game starts or when spawned
 void ARotatingFanBlades::BeginPlay()
 {
