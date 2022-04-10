@@ -56,23 +56,18 @@ void AInteractableComputer::Interaction()
 		ComputerMesh->SetMaterial(0, ComputerOffMat);
 		CPLightPro->SetLightColor(FLinearColor(1, 0.22216, 0.321932, 1));
 		ComputerPowerOn = false;
-		if (fanController)
+		if (fans)
 		{
 			UE_LOG(LogTemp, Warning, TEXT("FAN FOUND"));
-			fans = Cast<ARotatingFanBlades>(fanController);
-			fans->setRotateSpeed(0.0f);
 		}
 	}
 	else {
 		ComputerMesh->SetMaterial(0, ComputerOnMat);
 		CPLightPro->SetLightColor(FLinearColor(0.171441, 0.42869, 0.361307, 1));
 		ComputerPowerOn = true;
-		if (fanController)
+		if (fans)
 		{
 			UE_LOG(LogTemp, Warning, TEXT("FAN FOUND"));
-			fans = Cast<ARotatingFanBlades>(fanController);
-			fans->setRotateSpeed(6.0f);
-			
 		}
 	}
 	UE_LOG(LogTemp, Warning, TEXT("Computer Interacted"));

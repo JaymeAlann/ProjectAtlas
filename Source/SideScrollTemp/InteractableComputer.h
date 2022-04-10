@@ -26,10 +26,9 @@ protected:
 private:
 
 	bool ComputerPowerOn;
-	ARotatingFanBlades* fans;
 
-	UPROPERTY(EditDefaultsOnly)
-	AActor* fanController;
+	UPROPERTY(EditAnywhere)
+	ARotatingFanBlades* fans;
 
 	UPROPERTY(EditAnywhere)
 	URectLightComponent* CPLightPro;

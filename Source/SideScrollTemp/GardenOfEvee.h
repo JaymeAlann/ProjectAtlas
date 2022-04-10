@@ -13,5 +13,9 @@ UCLASS(minimalapi)
 class AGardenOfEvee : public AGameMode
 {
 	GENERATED_BODY()
+
+public:
+	AGardenOfEvee();
+	virtual ~AGardenOfEvee() = default;
 	
 };
